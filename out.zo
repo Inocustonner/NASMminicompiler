@@ -1,0 +1,25 @@
+SECTION .bss
+SECTION .data
+SECTION .text
+GLOBAL _start
+EXTERN print
+_start:
+mov ebp, esp
+sub esp, 4
+mov eax, 15;
+mov [ebp + 0x04],eax
+sub esp, 4
+mov eax, 14;
+mov [ebp + 0x08],eax
+mov eax, [ebp + 0x04]
+sub eax, 1;
+mov [ebp + 0x04],eax
+push dword [ebp + 0x04]
+call print
+pop eax
+push dword [ebp + 0x08]
+call print
+pop eax
+mov eax, 1
+mov ebx, 0
+int 0x80

@@ -1,0 +1,10 @@
+write your code to .z file
+you allow to 
+	declare vars with new word
+	all vars name is 1 little letter
+	also you can invoke print with one var like : print x;
+	each block should be followed with ;
+	+= -= =
+to compile use next command
+	make dir=(path to your exe) -f compiler
+result will be in "out" binary

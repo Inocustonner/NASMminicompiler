@@ -1,0 +1,7 @@
+new x;
+x = 15;
+new z;
+z = 14;
+x -= 1;
+print x;
+print z;

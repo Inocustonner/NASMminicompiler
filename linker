@@ -1,0 +1,19 @@
+PROG=out
+ASM=$(PROG).zo
+TARGET=$(PROG).o
+
+LIB=lib/lib
+LIBASM=$(LIB).asm
+LIBT=$(LIB).o
+
+NASMF=-f elf32
+LINKERF=-m elf_i386
+
+all: $(TARGET) $(LIBT)
+	@ld $(TARGET) $(LIBT) $(LINKERF) -o $(PROG)
+
+$(TARGET): $(ASM)
+	@nasm $(NASMF) $< -o $@
+
+$(LIBT): $(LIBASM)
+	@nasm $(NASMF) $< -o $@

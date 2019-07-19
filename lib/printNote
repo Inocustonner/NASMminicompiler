@@ -1,0 +1,31 @@
+    xor ecx, ecx
+    xor eax, eax
+    mov ebp, bf; debugging purpose
+
+    mov dword [esp], 0x12345678
+
+    mov cl, BFL / 4
+    ;works but prints numbers in the reverse order
+Setbuffer:
+    xor bx, bx
+    xor dx, dx
+    
+    mov bl, byte [esp]
+    
+    shl bx, 4; mov first number to higher nybble to copy to al
+    mov dl, bh
+
+    shr bl, 4; repeate for a lower one
+    mov dh, bl
+
+    or dx, 0x3030
+
+    mov al, cl
+    dec al
+    shl al, 1; al = al * 2
+
+    mov word [bf + eax], dx
+
+    shr dword [esp], 0x8; remove last 2 bytes
+
+    loop Setbuffer 
