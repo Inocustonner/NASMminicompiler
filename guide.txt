@@ -1,5 +1,5 @@
 write your code to .z file
-you allow to 
+you're allow to 
 	declare vars with new word
 	all vars name is 1 little letter
 	also you can invoke print with one var like : print x;
